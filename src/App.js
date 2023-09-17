@@ -1,56 +1,85 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, { useEffect } from 'react';
 import './App.css';
+import HomeScreen from './webScreens/HomeScreen';
+import Nav from "./Nav";
+import Login from './webScreens/LoginScreen';
+import Cart from './webScreens/CartScreen';
+import Orders from './webScreens/OrdersScreen';
+import { login, logout, selectUser } from './features/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { auth } from './firebase';
+import { Routes, Route } from 'react-router-dom';
+import Account from './webScreens/AccountScreen';
 
 function App() {
+
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      if (userAuth) {
+        dispatch(login({
+          uid: userAuth.uid,
+          email: userAuth.email,
+          displayName: userAuth.displayName
+        }));
+
+
+      } else {
+        dispatch(logout());
+
+        window.localStorage.removeItem("data");
+
+      }
+    })
+
+    return unsubscribe;
+  }, [dispatch])
+
+  // console.log(JSON.parse(window.localStorage.getItem("data")).cartItems)
+
+  // console.log(user);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div className='nav'>
+        <Nav />
+      </div>
+
+      {user && user.displayName ?
+        <Routes>
+          <Route path='/' element={<HomeScreen />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/orders' element={<Orders />} />
+          <Route path='/account' element={<Account />} />
+
+        </Routes>
+        :
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/' element={<HomeScreen />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/orders' element={<Orders />} />
+        </Routes>
+      }
+
+
+
+
+
+      {/* <HomeScreen /> */}
+
+      {/* <Login /> */}
+
+      {/* <Cart /> */}
+
+      {/* <Orders /> */}
+
+
+
     </div>
   );
 }

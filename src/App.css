@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -36,4 +36,25 @@
   100% {
     transform: translateY(0px);
   }
+} */
+
+
+/* .App {
+  position: absolute;
+  
+} */
+
+.App {
+  background-image: url("./websiteImages/FiberBackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
 }

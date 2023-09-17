@@ -1,0 +1,18 @@
+.orders {
+    position: relative;
+    height: 60vh;
+}
+
+#quantity_span {
+    color: purple;
+    font-weight: 900;
+}
+
+.orders>h2 {
+    text-align: center;
+}
+
+.orders_body {
+    overflow: scroll;
+    height: 90%;
+}

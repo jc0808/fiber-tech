@@ -1,0 +1,24 @@
+.homeScreen_header {
+    padding: 10px;
+    max-height: fit-content;
+    object-fit: contain;
+    height: auto;
+    width: auto;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.homeScreen_header .header_icons {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    padding: 5px;
+}
+
+.homeScreen_header .header_icons>h2 {
+    cursor: pointer;
+}

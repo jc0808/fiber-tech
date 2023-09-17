@@ -1,0 +1,76 @@
+.account {
+    position: relative;
+    height: 61vh;
+}
+
+.account>h2 {
+    text-align: center;
+}
+
+.account_body label {
+    font-size: 20px;
+}
+
+.account_body {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.info__body {
+    padding: 20px;
+    display: grid;
+}
+
+.info__body>label {
+    padding: 10px;
+}
+
+.update_info_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    background-color: blueviolet;
+
+}
+
+button:hover {
+    color: #fff;
+}
+
+input {
+    padding: 10px;
+    align-self: center;
+}
+
+
+
+
+
+.password__body>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete_button {
+    display: flex;
+    justify-content: center;
+}
+
+.delete_button>button {
+    background-color: lightcoral;
+    color: #fff;
+
+}
+
+.delete_button>button:hover {
+    background-color: red;
+}

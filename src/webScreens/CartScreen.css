@@ -1,0 +1,146 @@
+.cart {
+    position: relative;
+    text-align: center;
+    height: 61vh;
+}
+
+
+.cartBody {
+    /* display: flex;
+    justify-content: center; */
+    /* display: grid; */
+    /* flex-direction: column; */
+    padding: 20px;
+
+}
+
+.cartBody>button {
+    margin-top: 30px;
+    padding: 18px;
+    border: none;
+    background-color: lightskyblue;
+    border-radius: 20%;
+}
+
+.table_container {
+    display: grid;
+    overflow: scroll;
+    height: 50vh;
+}
+
+.table_row_delete {
+    cursor: pointer;
+}
+
+
+
+/* .table_body {
+    overflow-y: scroll;
+    height: 40vh;
+} */
+
+table {
+    /* border: 2px solid;
+    font-size: 30px; */
+    border-collapse: collapse;
+    /* font-size: 30px; */
+    width: 100%;
+    /* height: 20vh; */
+
+}
+
+th {
+    border-bottom: 1px solid;
+    border: 2px solid;
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    border: 2px solid;
+    height: 70px;
+    font-weight: 600;
+}
+
+td>img {
+    max-width: 200px;
+}
+
+/* .cart_body {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    border: 2px solid;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+/* .columnNames {
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    text-align: center;
+    justify-content: center;
+}
+
+.cart_body .nameColumn {
+    display: flex;
+    justify-content: center;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.cart_body .nameColumn>h3 {
+    margin-top: 100px;
+}
+
+.cart_body .imageColumn {
+    border-right: 2px solid;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid;
+}
+
+.cart_body .imageColumn>img {
+    max-width: 200px;
+}
+
+.cart_body .quantityColumn {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.cart_body .quantityColumn>label {
+    margin-top: 100px;
+}
+
+.cart_body .priceColumn {
+    display: flex;
+    justify-content: center;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.cart_body .priceColumn>label {
+    margin-top: 100px;
+}
+
+
+.totalColumn {
+    display: flex;
+    margin-inline: 100vh;
+    justify-content: end;
+
+    border: 2px solid;
+    width: 300px;
+
+}
+
+.totalColumn>label {
+    font-size: 30px;
+    font-weight: 600;
+} */
+
+.cart_table {}
